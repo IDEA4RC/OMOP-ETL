@@ -7,7 +7,7 @@ También hay que resaltar que los próximos mapeos son únicamente a las variabl
 Se ha intentado, con éxito, hacer el mapeo a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados en el README de IDEA4RC data (los que tienen #).
 
 
-#### LINKS RECOMENDADOS
+#### LINKS RECOMENDADOS (en cada notebook hay más)
 https://docs.google.com/spreadsheets/d/1Vw1Dr2K4oG__cDQTutGaJhZvGUvQTLwc4qWreP6qMSs/edit#gid=1679851455
 
 https://drive.google.com/file/d/1BQR6AAIVCSrJj1ZzQPaYH6Tg6VfMXb2V/view
