@@ -1,4 +1,9 @@
 # MAPEOS A LAS TABLAS DE OMOP
+##Instrucciones para despliegue
+1. Ejecutar el notebook dentro de "OMOP-ETL-main\ETL_idea4rc_to_omop\IDEA4RC-data" para generar los csv.
+2. Ejecutar notebooks de mapeo
+3. Conectarse a la base de datos y hacer consultas a las tablas del esquema omopcdm.
+
 El problema que se nos pide es hacer un mapeo de la base de datos IDEA4RC a OMOP CDM. Para ello, al no disponer de la base de datos desplegada y con ella datos de IDEA4RC, hemos seguido los siguientes pasos:
 - En el archivo DataGenerationIDEA4RC se generan archivos CSV para cada tabla de IDEA4RC. Estos ejemplos se crean gracias al EXCEL de IDEA4RC (ver link docs.google abajo) y se guardan en la carpeta "ETL_idea4rc_to_omop/IDEA4RC-data/".
 - Dentro de la carpeta "ETL_idea4rc_to_omop" tendremos notebooks correspondientes al mapeo de cada tabla a OMOP. En estos notebooks se realiza la lectura de los CSV, la limpieza y transformación de los datos necesaria, la creación de nuevos datos que no figuraban en IDEA4RC y eran necesarios para OMOP.
