@@ -1,5 +1,5 @@
 # MAPEOS A LAS TABLAS DE OMOP
-##Instrucciones para despliegue
+## Instrucciones para despliegue
 1. Ejecutar el notebook dentro de "OMOP-ETL-main\ETL_idea4rc_to_omop\IDEA4RC-data" para generar los csv.
 2. Ejecutar notebooks de mapeo
 3. Conectarse a la base de datos y hacer consultas a las tablas del esquema omopcdm.
