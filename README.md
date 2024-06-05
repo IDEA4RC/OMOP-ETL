@@ -4,7 +4,7 @@ En los próximos mapeos, cabe añadir y destacar un error que tiene que ser inve
 
 También hay que resaltar que los próximos mapeos son únicamente a las variables "NOT NULL" de las tablas de OMOP. Cabe realizar el resto.
 
-Se ha intentado, con éxito, hacer el mapeo a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados en el README de IDEA4RC data (los que tienen #).mape
+Se ha intentado, con éxito, hacer el mapeo a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados en el README de IDEA4RC data (los que tienen #).
 
 Para el resto de mapeo de tablas, hay que tener en cuenta que muchas de ellas coinciden nombres de columnas y valores, por tanto coincidirán a la hora de hacer el mapeo a su columna de la tabla correspondiente a OMOP. Habría que valorar hacer una trasnformación de ciertas tablas de IDEA4RC en este aspecto. Si nos fijamos en el EXCEL de IDEA4RC, las tablas "AdverseEVent" y "TreatmentResponse" tienen la misma columna "Episode Event Reference" por lo que sus valores al hacer el mapeo a "EPISODE.episode_id" pueden coincidir.
 
