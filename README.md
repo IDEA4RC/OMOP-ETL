@@ -4,19 +4,11 @@ En los próximos mapeos, cabe añadir y destacar un error que tiene que ser inve
 
 También hay que resaltar que los próximos mapeos son únicamente a las variables "NOT NULL" de las tablas de OMOP. Cabe realizar el resto.
 
-Se ha intentado, con éxito, hacer el mapeo a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados al principio (los que tienen #).
+Se ha intentado, con éxito, hacer el mapeo a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados en el README de IDEA4RC data (los que tienen #).
 
-#### DUDAS DE CIERTOS MAPEOS
-Respecto a las tablas de Observation, Measurement y Condition_occurence, ¿se mete en la misma fila de los observation_concept_id todos los valores de las observaciones? ¿O se crean varias filas?
-
-Si se repite algún observation_concept_id ¿se eliminan? Pueden generarse multitud de datos de lo contrario.
 
 #### LINKS RECOMENDADOS
 https://docs.google.com/spreadsheets/d/1Vw1Dr2K4oG__cDQTutGaJhZvGUvQTLwc4qWreP6qMSs/edit#gid=1679851455
-
-https://inspiredata.network/etl/IDSR2OMOP/IDS2OMOP-Assay-Part-1-v1.0/measurement.html
-
-https://github.com/OHDSI/OMOP-Queries/blob/master/md/Condition_Occurence.md
 
 https://drive.google.com/file/d/1BQR6AAIVCSrJj1ZzQPaYH6Tg6VfMXb2V/view
 
