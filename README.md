@@ -21,6 +21,8 @@ Otro aspecto a destacar es que supuestamente, los datos de IDEA4RC no contienen 
 #### LINKS RECOMENDADOS (en cada notebook hay más)
 https://docs.google.com/spreadsheets/d/1Vw1Dr2K4oG__cDQTutGaJhZvGUvQTLwc4qWreP6qMSs/edit#gid=1679851455
 
+https://ohdsi.github.io/CommonDataModel/cdm54.html#observation
+
 https://drive.google.com/file/d/1BQR6AAIVCSrJj1ZzQPaYH6Tg6VfMXb2V/view
 
 https://github.com/OHDSI/Vocabulary-v5.0/wiki/Vocab.-TYPE_CONCEPT
