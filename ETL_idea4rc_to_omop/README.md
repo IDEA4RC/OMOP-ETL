@@ -5,7 +5,7 @@ En algunos archivos, en el código se crea un dataframe "df_tables" para valores
 
 Para seguir el resto de mapeo de tablas, mirar Patient to OMOP para ver como se desarrolla. Tener en cuenta para el resto de mapeos que hay columnas de IDEA4RC de ciertas tablas que coinciden. No hay que repetir datos. 
 
-Averiguar qué hacer con los datos que son necesarios en OMOP y no tenemos en IDEA4RC.
+Averiguar qué hacer con los datos que son necesarios en OMOP y no tenemos en IDEA4RC. También hay que resolver ciertos datos que están disponibles en IDEA4RC pero no se especifican un mapeo a tablas de OMOP.
 
 Valorar hacer también el mapeo del resto de tablas que no son NOT NULL y cómo generar esos datos en IDEA4RC.
 
