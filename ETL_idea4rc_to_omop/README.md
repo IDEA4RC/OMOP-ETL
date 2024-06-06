@@ -3,7 +3,7 @@ Cada archivo consiste en un notebook que desarrolla el mapeo de una tabla de IDE
 
 En algunos archivos, en el código se crea un dataframe "df_tables" para valores que no tenemos en nuestra base de datos IDEA4RC y que son necesarios en OMOP.
 
-También en algunos para su insert en OMOP es necesaria su conversión a tipo "Object" (en algunos casos se hace, en otros, esto aparece comentado con  # por si acaso, aunque en esos casos no es necesario ejecutar esas filas de código.
+También la mayoría de tablas, sino todas, para su insert en OMOP es necesaria su conversión a tipo "Object" (en algunos casos se hace, en otros, esto aparece comentado con  # por si acaso, aunque en esos casos no es necesario ejecutar esas filas de código.
 
 Para seguir el resto de mapeo de tablas, mirar Patient to OMOP para ver como se desarrolla. Tener en cuenta para el resto de mapeos que hay columnas de IDEA4RC de ciertas tablas que coinciden. No hay que repetir datos. 
 
