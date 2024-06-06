@@ -3,6 +3,7 @@
 1. Ejecutar el notebook dentro de "OMOP-ETL-main\ETL_idea4rc_to_omop\IDEA4RC-data" para generar los csv.
 2. Ejecutar notebooks de mapeo
 3. Conectarse a la base de datos y hacer consultas a las tablas del esquema omopcdm.
+*Este repositorio se ha ejecutado con Jupyter en Anaconda. Descargar Anaconda e iniciar Anaconda Navigator para interacturar con Jupyter.
 
 El problema que se nos pide es hacer un mapeo de la base de datos IDEA4RC a OMOP CDM. Para ello, al no disponer de la base de datos desplegada y con ella datos de IDEA4RC, hemos seguido los siguientes pasos:
 - En el archivo DataGenerationIDEA4RC se generan archivos CSV para cada tabla de IDEA4RC. Estos ejemplos se crean gracias al EXCEL de IDEA4RC (ver link docs.google abajo) y se guardan en la carpeta "ETL_idea4rc_to_omop/IDEA4RC-data/".
