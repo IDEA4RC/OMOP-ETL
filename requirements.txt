@@ -1,3 +1,1 @@
-mysql-connector-python
-pandas
-pandas-mapper
+#Add the necessary requirements tools if it´s necessary besides the imports of libraries in the notebooks
