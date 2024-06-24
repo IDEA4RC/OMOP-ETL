@@ -1,1 +1,4 @@
 #Add the necessary requirements tools if it´s necessary besides the imports of libraries in the notebooks
+psycopg2
+pandas
+numpy
