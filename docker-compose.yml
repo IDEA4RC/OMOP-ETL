@@ -12,16 +12,15 @@ services:
     command: "start-notebook.sh --NotebookApp.token="
     user: "${UID}:${GID}"
     depends_on:
-      - postgres
+      - mysql
 
-  postgres:
-    image: postgres:latest
-    container_name: omop_postgres
+  mysql:
+    image: mysql:latest
+    container_name: omop_mysql
     environment:
-      POSTGRES_DB: omopdb
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mysecretpassword
+      MYSQL_ROOT_PASSWORD: mysecretpassword
     ports:
       - "5432:5432"
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
+    restart: always
