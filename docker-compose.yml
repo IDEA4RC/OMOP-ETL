@@ -12,15 +12,22 @@ services:
     command: "start-notebook.sh --NotebookApp.token="
     user: "${UID}:${GID}"
     depends_on:
-      - mysql
+      - mariadb
 
-  mysql:
-    image: mysql:latest
-    container_name: omop_mysql
+  mariadb:
+    image: mariadb:latest
+    container_name: omop_mariadb
     environment:
+      MYSQL_DATABASE: omopdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: mysecretpassword
       MYSQL_ROOT_PASSWORD: mysecretpassword
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
-    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
