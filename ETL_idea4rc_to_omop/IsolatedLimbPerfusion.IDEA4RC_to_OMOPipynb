@@ -2,16 +2,16 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "fb36b6f5-0d70-4b9e-a7b0-5bb93d3f4e88",
+   "id": "5ab70777-8560-48c3-a805-80e4c80a2b60",
    "metadata": {},
    "source": [
-    "# Other Local Treatment to OMOP"
+    "# Isolated Limb Perfusion to OMOP"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "0d858aa2-d10d-4632-8a5a-8edf1759adee",
+   "id": "0f1787f1-36ae-4a57-80bd-64c0c4f74684",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -23,17 +23,48 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "772f5f97-b6cd-47ab-acce-03f166877522",
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4237c0c3-e572-40f3-961c-7ce8a42aa30d",
    "metadata": {},
+   "outputs": [],
    "source": [
-    "### Other Local Treatment to Episode"
+    "isolated_limb_perfusion_IDEA4RC = pd.read_csv(\"./IDEA4RC-data/isolatedLimbPerfusionIDEA4RC.csv\")\n",
+    "isolated_limb_perfusion_IDEA4RC.head(5)"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "81c09bd2-55b3-4341-9c62-9eaf83b67647",
+   "id": "a686ef82-24f1-4b09-96ca-08bb085e3e87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Conexión a la base de datos OMOP CDM\n",
+    "conn = psycopg2.connect(\n",
+    "    dbname=\"omopdb\",\n",
+    "    user=\"postgres\",\n",
+    "    password=\"mysecretpassword\",\n",
+    "    host=\"localhost\",\n",
+    "    port=\"5432\"\n",
+    ")\n",
+    "\n",
+    "# Comando para hacer el mapeo (insercción de datos del IDEA4RC.csv a OMOP)\n",
+    "cur = conn.cursor()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "90c1be78-15bd-4ef9-a334-a12c9ad945f0",
+   "metadata": {},
+   "source": [
+    "### Isolated Limb Perfusion to Episode"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f2157740-0d86-4525-a9ea-38bed794ed58",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -51,16 +82,16 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5054245b-981e-4f2d-92cd-4c365dad9a83",
+   "id": "ffe2e3cf-b665-4d1d-b8b6-462e45700270",
    "metadata": {},
    "source": [
-    "### Other Local Treatment to Procedure  Ocurrence"
+    "### Isolated Limb Perfusion to Procedure  Ocurrence"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "f0a78229-d2bf-42c5-975b-ec83e7dcd2de",
+   "id": "b49b34a1-8184-45fe-a7a6-918a7d30449a",
    "metadata": {},
    "outputs": [],
    "source": [
