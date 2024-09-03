@@ -1,0 +1,27 @@
+version: '3'
+services:
+  jupyter:
+    build: 
+      context: .
+      dockerfile: ./docker/jupyter/Dockerfile
+    volumes:
+      - ./ETL_idea4rc_to_omop:/home/jovyan/work
+    ports:
+      - 8884:8888
+    container_name: jupyter_notebook
+    command: "start-notebook.sh --NotebookApp.token="
+    user: "${UID}:${GID}"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: omop_postgres
+    environment:
+      POSTGRES_DB: omopdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
