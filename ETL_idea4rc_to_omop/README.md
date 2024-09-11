@@ -15,7 +15,12 @@ Also, perform reverse mapping from IDEA4RC to OMOP. This can be done by reading 
 
 Once we have completed the mapping from IDEA4RC to OMOP or from OMOP to IDEA4RC, to map any file, it would simply involve changing the name of the CSV being read in the code and executing it. When dealing with a large amount of data, consider using a for loop to read each CSV and execute the mapping code.
 
+# Codes used for episodes
 
+Cancer Surgery: 32939
+Cancer Radiotherapy: 32940
+Cancer Drug Treatment: 32941
+Disease First Occurrence (Overarching Episode): 32528
 
 # Main doubts
 
