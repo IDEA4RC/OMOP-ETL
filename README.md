@@ -1,27 +1,27 @@
-# MAPEOS A LAS TABLAS DE OMOP
-## Instrucciones para despliegue
-1. Ejecutar el notebook dentro de "OMOP-ETL-main\ETL_idea4rc_to_omop\IDEA4RC-data" para generar los csv.
-2. Ejecutar notebooks de mapeo
-3. Conectarse a la base de datos y hacer consultas a las tablas del esquema omopcdm.
-   
-*Este repositorio se ha ejecutado con Jupyter en Anaconda. Descargar Anaconda e iniciar Anaconda Navigator para interacturar con Jupyter.*
+# MAPPINGS TO OMOP TABLES
+## Deployment Instructions
+1. Run the notebook inside `"OMOP-ETL-main\ETL_idea4rc_to_omop\IDEA4RC-data"` to generate the CSV files.
+2. Execute the mapping notebooks.
+3. Connect to the database and query the tables in the `omopcdm` schema.
 
-El problema que se nos pide es hacer un mapeo de la base de datos IDEA4RC a OMOP CDM. Para ello, al no disponer de la base de datos desplegada y con ella datos de IDEA4RC, hemos seguido los siguientes pasos:
-- En el archivo DataGenerationIDEA4RC se generan archivos CSV para cada tabla de IDEA4RC. Estos ejemplos se crean gracias al EXCEL de IDEA4RC (ver link docs.google abajo) y se guardan en la carpeta "ETL_idea4rc_to_omop/IDEA4RC-data/".
-- Dentro de la carpeta "ETL_idea4rc_to_omop" tendremos notebooks correspondientes al mapeo de cada tabla a OMOP. En estos notebooks se realiza la lectura de los CSV, la limpieza y transformación de los datos necesaria, la creación de nuevos datos que no figuraban en IDEA4RC y eran necesarios para OMOP.
-  
-*Los mapeos que existen a día de hoy 05/06/2024 únicamente es para los valores NOT NULL obligatorios a introducir en algunas tablas de OMOP. Cabe realizar el resto.*
-*Valorar hacer un bucle for en cada notebook de tabla de IDEA4RC para que vaya leyendo todos los csv que tenga y realice esta transformación. Pensar en un despliegue automático con Docker.*
+*This repository has been run with Jupyter on Anaconda. Download Anaconda and start Anaconda Navigator to interact with Jupyter.*
 
-En los próximos mapeos, cabe añadir y destacar un error que tiene que ser investigado y solucionado. Todos los mapeos van bien, se insertan de manera correcta los datos en OMOP, sin embargo, al cabo de 15-20 segundos se borran de OMOP. He probado a no cerrar la conexión al insertar los datos, pero ni aún así esto se soluciona (hay que averiguar si el error procede del repositorio desplegado para OMOP de IDEA4RC. De lo contrario, encontrar posibles errores en los códigos de mapeo de los notebooks.
+The task is to map the IDEA4RC database to OMOP CDM. Since we do not have access to the deployed IDEA4RC database and its data, we followed these steps:
+- The `DataGenerationIDEA4RC` file generates CSV files for each IDEA4RC table. These examples are created using the IDEA4RC Excel (see Google Docs link below) and are saved in the folder `"ETL_idea4rc_to_omop/IDEA4RC-data/"`.
+- Within the folder `"ETL_idea4rc_to_omop"`, we have notebooks corresponding to the mapping of each table to OMOP. In these notebooks, the CSV files are read, the necessary data cleaning and transformation are performed, and new data that wasn’t present in IDEA4RC but is required for OMOP is created.
 
-Se ha intentado, con éxito, hacer el mapeo de algunos datos Patient a las columnas "values" de diversas tablas de OMOP. Esto se hará con los vocabularios "sobrantes" mencionados en el README dentro de lo especificaco en el notebook de generacio de datos en IDEA4RC-data (los que tienen #).
+*As of today, 06/05/2024, mappings exist only for the mandatory NOT NULL values to be inserted into certain OMOP tables. The rest still needs to be done.*
+*Consider implementing a `for` loop in each IDEA4RC table notebook to read all the CSVs and perform this transformation. Think about an automatic deployment with Docker.*
 
-Para el resto de mapeo de tablas, hay que tener en cuenta que muchas de ellas coinciden nombres de columnas y valores, por tanto coincidirán a la hora de hacer el mapeo a su columna de la tabla correspondiente a OMOP. Habría que valorar hacer una trasnformación de ciertas tablas de IDEA4RC en este aspecto. Si nos fijamos en el EXCEL de IDEA4RC, las tablas "AdverseEVent" y "TreatmentResponse" tienen la misma columna "Episode Event Reference" por lo que sus valores al hacer el mapeo a "EPISODE.episode_id" pueden coincidir.
+In future mappings, an error must be noted and investigated. While all mappings are working fine and data is inserted correctly into OMOP, the data is deleted from OMOP after 15-20 seconds. I’ve tried not closing the connection after inserting the data, but this hasn’t resolved the issue. It’s necessary to determine whether the error comes from the deployed OMOP repository for IDEA4RC. Otherwise, we must look for potential errors in the mapping code of the notebooks.
 
-Otro aspecto a destacar es que supuestamente, los datos de IDEA4RC no contienen los "ExpectedValue" definidos en el Excel. Contienen directamente las referencias numéricas a los vocabularios o modifiers de OMOP. Por lo que un ejemplo de ello serían los CSV creados en la carpeta IDEAR4C-data
+There has been success mapping some Patient data to the "values" columns in various OMOP tables. This will be done using the "extra" vocabularies mentioned in the README and specified in the data generation notebook within IDEA4RC-data (those with `#`).
 
-#### LINKS RECOMENDADOS (en cada notebook hay más)
+For the rest of the table mappings, keep in mind that many columns and values have the same names, so they will align when mapped to their corresponding OMOP table columns. Consider transforming certain IDEA4RC tables for this purpose. If we look at the IDEA4RC Excel file, the "AdverseEvent" and "TreatmentResponse" tables share the same column "Episode Event Reference," so their values could coincide when mapped to "EPISODE.episode_id."
+
+Another important point is that, supposedly, the IDEA4RC data does not contain the "ExpectedValue" defined in the Excel file. It contains direct numeric references to OMOP vocabularies or modifiers. An example of this can be seen in the CSV files created in the IDEA4RC-data folder.
+
+#### RECOMMENDED LINKS (more are included in each notebook)
 https://docs.google.com/spreadsheets/d/1Vw1Dr2K4oG__cDQTutGaJhZvGUvQTLwc4qWreP6qMSs/edit#gid=1679851455
 
 https://ohdsi.github.io/CommonDataModel/cdm54.html#observation

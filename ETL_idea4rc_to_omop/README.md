@@ -1,16 +1,28 @@
-# Información relevante
-Cada archivo consiste en un notebook que desarrolla el mapeo de una tabla de IDEA4RC a OMOP.
+# Relevant Information
+Each file consists of a notebook that develops the mapping of a table from IDEA4RC to OMOP.
 
-En algunos archivos, en el código se crea un dataframe "df_tables" para valores que no tenemos en nuestra base de datos IDEA4RC y que son necesarios en OMOP.
+In some files, the code creates a dataframe called "df_tables" for values that we don't have in our IDEA4RC database but are necessary in OMOP.
 
-También la mayoría de tablas, sino todas, para su insert en OMOP es necesaria su conversión a tipo "Object" (en algunos casos se hace, en otros, esto aparece comentado con  # por si acaso, aunque en esos casos no es necesario ejecutar esas filas de código.
+Additionally, for most tables, if not all, their insertion into OMOP requires conversion to the "Object" type. In some cases, this conversion is performed, while in others it is commented out with a `# just in case`. In these cases, it’s not necessary to execute those lines of code.
 
-Para seguir el resto de mapeo de tablas, mirar Patient to OMOP para ver como se desarrolla. Tener en cuenta para el resto de mapeos que hay columnas de IDEA4RC de ciertas tablas que coinciden. No hay que repetir datos. 
+To follow the rest of the table mapping process, refer to the "Patient to OMOP" notebook to see how it is developed. Keep in mind that for the rest of the mappings, certain columns in IDEA4RC tables coincide. There's no need to duplicate data.
 
-Averiguar qué hacer con los datos que son necesarios en OMOP y no tenemos en IDEA4RC. También hay que resolver ciertos datos que están disponibles en IDEA4RC pero no se especifican un mapeo a tablas de OMOP.
+Figure out what to do with the data that is required in OMOP but not available in IDEA4RC. Additionally, certain data available in IDEA4RC might not have a specified mapping to OMOP tables, which also needs to be addressed.
 
-Valorar hacer también el mapeo del resto de tablas que no son NOT NULL y cómo generar esos datos en IDEA4RC.
+Consider mapping the rest of the tables that are not marked as NOT NULL and how to generate this data in IDEA4RC.
 
-Hacer también mapeo a la inversa, de IDEA4RC to OMOP. Esto puede basarse en leer los datos de cada tabla con consultas SQL y exportar los datos de cada tabla de OMOP a un csv, convertirlos cada uno a un dataframe y leerlo así con Pandas, e ir mapeando manualmente las columnas de las tablas correspondientes a IDEA4RC. 
+Also, perform reverse mapping from IDEA4RC to OMOP. This can be done by reading the data from each table using SQL queries, exporting the data from each OMOP table to a CSV, converting each one to a dataframe, and reading it with Pandas, mapping the corresponding columns to IDEA4RC manually.
 
-Cuando ya lo tengamos hecho el mapeo de IDEA4RC a OMOP o de OMOP a IDEA4RC, para hacer el mapeo de cualquier archivo consistiría en cambiar el nombre de lectura de cada csv en el código y ejecutar. Valorar cuando tenemos muchos datos, hacer un for que vaya leyendo cada CSV y ejecutando el codigo para mapeo.
+Once we have completed the mapping from IDEA4RC to OMOP or from OMOP to IDEA4RC, to map any file, it would simply involve changing the name of the CSV being read in the code and executing it. When dealing with a large amount of data, consider using a for loop to read each CSV and execute the mapping code.
+
+# Codes used for episodes
+
+Cancer Surgery: 32939
+Cancer Radiotherapy: 32940
+Cancer Drug Treatment: 32941
+Disease First Occurrence (Overarching Episode): 32528
+
+# Main doubts
+
+-What to do with the Drugs For Treatments mapping since it is not specified.
+- What codes to use for some specific mappings that are required, this problem is mentioned every time it appears.
