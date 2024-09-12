@@ -1,4 +1,5 @@
-# Data Fake IDEA4RC
-Se crean datos fake en base al Excel definido de las tablas de IDEA4RC. Los valores que se implementan arbitrariamente son directamente las referencias numéricas de los valores de los vocabularios de Athena. 
+# Fake Data IDEA4RC
 
-Según Eugenio es así y no son los "Expected Value" definidos en el Excel. Si finalmente fueran los "Expected Values", cambiar las referencias númericas manualmente por los valores correspondientes y, después, leer esos datos y hacer una transformación para cada valor a su referencia numérica de Vocabulario de Athena correspondiente, para su posterior insert en OMOP.
+Fake data is created based on the defined Excel sheet of the IDEA4RC tables. The values arbitrarily implemented are directly the numerical references from the Athena vocabularies.
+
+According to Eugenio, this is how it works, and they are not the "Expected Values" defined in the Excel sheet. If they were to be the "Expected Values" in the end, manually replace the numerical references with the corresponding values. Then, read that data and perform a transformation for each value to its corresponding numerical reference from the Athena Vocabulary, for later insertion into OMOP.
